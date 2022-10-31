@@ -27,11 +27,35 @@ products.
 
 # Guide
 
-TBD.
+### Collection side
+
+NFT collection is extended by new GET method `get_reveal_data` that allow you to get information of remaining NFT content that will be revealed.
+
+dApps can parse such info and display to user what can be inside the mystery box. 
+
+Also dApps can detect can we reveal NFT or not right now (if there are 0 items left in collection - we can't reveal NFT)
+
+Also collection is extended by new internal messages such: `nft_reveal_nft_request`, `nft_reveal_success_collection_response` that allows to interact with NFT which is in reveal process.
+And `collection_add_reveal_batch` which allow to extend current remaining list of content that will be raffle to NFTs
+
+### NFT side
+
+NFT item is extended by new GET method `get_reveal_mode` which means the current reveal status of this item.
+Based on this, the dApp can show the possibility or progress of reveal 
+
+Also item is extended by new internal messages such: `nft_reveal_user_request` that allow user to ask NFT for reveal
 
 # Specification
 
-TBD.
+### TLB
+
+```
+nft_reveal_user_request#5fcc3d1a query_id:uint64 = InternalMsgBody;
+nft_reveal_nft_request#5fcc3d1b query_id:uint64 index:uint256 = InternalMsgBody;
+nft_reveal_success_collection_response#5fcc3d1c query_id:uint64 success:Bool new_content:(Maybe (Either Cell ^Cell))  = InternalMsgBody;
+
+collection_add_reveal_batch#5fcc3d1d query_id:uint64 new_content_batch:Hashmap 64 Either Cell ^Cell = InternalMsgBody;
+```
 
 # Drawbacks
 
