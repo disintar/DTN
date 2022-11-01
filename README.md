@@ -4,6 +4,6 @@
 
 ---
 
-| Theme | Topic          | Link                                                                       |
-|-------|----------------|----------------------------------------------------------------------------|
-| NFT   | Onchain-reveal | [Click](https://github.com/disintar/DTN/blob/main/notes/onchain-reveal.md) |
+| Status  | Theme | Topic          | Link                                                                       |
+|---------|-------|----------------|----------------------------------------------------------------------------|
+| Draft   | NFT   | Onchain-reveal | [Click](https://github.com/disintar/DTN/blob/main/notes/onchain-reveal.md) |
